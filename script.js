@@ -6,7 +6,7 @@ const dropdownMenu = document.getElementById('dropdownMenu');
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 
-// Switch between sign in & sign up
+// Switch between Sign In & Sign Up
 goSignUp.addEventListener('click', () => {
   container.classList.add('show-signup');
 });
@@ -14,12 +14,12 @@ goSignIn.addEventListener('click', () => {
   container.classList.remove('show-signup');
 });
 
-// Dropdown toggle
+// Dropdown toggle for contacts
 menuBtn.addEventListener('click', () => {
   dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
-// Theme toggle with icons
+// Dark/Light theme toggle
 themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   if (document.body.classList.contains('dark')) {
