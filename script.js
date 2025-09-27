@@ -1,20 +1,29 @@
-// Theme toggle
-const toggleBtn = document.getElementById('theme-toggle');
-toggleBtn.addEventListener('click', () => {
+const container = document.getElementById('container');
+const goSignUp = document.getElementById('goSignUp');
+const goSignIn = document.getElementById('goSignIn');
+const signUpForm = document.querySelector('.sign-up');
+const signInForm = document.querySelector('.sign-in');
+
+goSignUp.addEventListener('click', () => {
+  container.classList.add('show-signup');
+  signUpForm.style.opacity = '1';
+  signUpForm.style.pointerEvents = 'auto';
+  signInForm.style.opacity = '0';
+});
+
+goSignIn.addEventListener('click', () => {
+  container.classList.remove('show-signup');
+  signUpForm.style.opacity = '0';
+  signUpForm.style.pointerEvents = 'none';
+  signInForm.style.opacity = '1';
+});
+
+document.querySelector('.theme-toggle').addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  toggleBtn.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
 });
 
-// Switch to Sign Up
-document.querySelector('.switch-to-signup').addEventListener('click', () => {
-  document.querySelector('.logo-box').classList.add('active');
-  document.querySelector('.signup-box').classList.remove('hidden');
-});
-
-// Switch back to Sign In
-document.querySelector('.switch-to-signin').addEventListener('click', () => {
-  document.querySelector('.logo-box').classList.remove('active');
-  setTimeout(() => {
-    document.querySelector('.signup-box').classList.add('hidden');
-  }, 600); // wait for animation
+const menuBtn = document.querySelector('.menu');
+const dropdown = document.querySelector('.dropdown');
+menuBtn.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
