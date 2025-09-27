@@ -5,46 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RehabAI</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <div class="menu" id="menuBtn">☰</div>
-    <div class="dropdown" id="dropdownMenu">
+    <div id="menuBtn" class="menu"><i class="fas fa-ellipsis-v"></i></div>
+    <div id="dropdownMenu" class="dropdown">
       <a href="#">Home</a>
       <a href="#">Services</a>
       <a href="#">Contact</a>
     </div>
-    <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+    <button id="themeToggle" class="theme-toggle">
+      <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
   </header>
 
-  <div class="container" id="container">
-    <div class="form-container sign-in" id="signInForm">
+  <div id="container" class="container">
+    <!-- Sign In -->
+    <div id="signInForm" class="form-container sign-in">
       <div class="form">
         <h2>Sign In</h2>
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <button>Sign In</button>
-        <div class="switch" id="goSignUp">Don’t have an account? Sign Up</div>
+        <div id="goSignUp" class="switch">Don’t have an account? Sign Up</div>
       </div>
     </div>
 
-    <div class="form-container sign-up" id="signUpForm">
+    <!-- Sign Up -->
+    <div id="signUpForm" class="form-container sign-up">
       <div class="form">
         <h2>Sign Up</h2>
-        <input type="text" placeholder="Name" />
+        <input type="text" placeholder="Full Name" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
         <button>Sign Up</button>
-        <div class="switch" id="goSignIn">Already have an account? Sign In</div>
+        <div id="goSignIn" class="switch">Already have an account? Sign In</div>
       </div>
     </div>
 
-    <div class="logo-panel" id="logoPanel"></div>
+    <!-- Sliding Logo -->
+    <div id="logoPanel" class="logo-panel"></div>
   </div>
 
   <footer>
-    <a href="https://instagram.com/_deitious_" target="_blank">Instagram</a>
-    <a href="https://wa.me/254769938130" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/_deitious_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://wa.me/254769938130" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
   </footer>
 
   <script src="script.js"></script>

@@ -1,4 +1,4 @@
-:root {
+k:root {
   --primary: #1e90ff;
   --secondary: #2ecc71;
   --bg: #f4f4f4;
@@ -13,14 +13,14 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
   transition: background 0.5s, color 0.5s;
 }
 header {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
 }
 .menu {
   font-size: 1.5rem;
@@ -34,14 +34,13 @@ header {
   background: var(--bg);
   border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: hidden;
   z-index: 10;
 }
 .dropdown a {
   display: block;
   padding: 0.75rem 1rem;
-  text-decoration: none;
   color: var(--text);
+  text-decoration: none;
 }
 .dropdown a:hover {
   background: var(--primary);
@@ -49,30 +48,65 @@ header {
 }
 .theme-toggle {
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.7rem;
   background: var(--primary);
-  border-radius: 20px;
   color: white;
   border: none;
+  border-radius: 50%;
+  font-size: 1rem;
 }
 .container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 60px); /* adjust for header height */
+  height: calc(100vh - 120px);
   display: flex;
   overflow: hidden;
 }
 .form-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
   position: absolute;
   top: 0;
   height: 100%;
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
   z-index: 1;
+}
+.form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 300px;
+}
+.form h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.switch {
+  margin-top: 1rem;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: center;
 }
 .sign-in {
   left: 0;
@@ -80,9 +114,10 @@ header {
   pointer-events: auto;
 }
 .sign-up {
-  left: 0; /* same position, but hidden initially */
+  left: 0;
   opacity: 0;
   pointer-events: none;
+  transform: translateX(100%);
 }
 .logo-panel {
   position: absolute;
@@ -100,24 +135,26 @@ header {
   transform: translateX(-100%);
 }
 .container.show-signup .sign-in {
+  transform: translateX(-100%);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-100%);
 }
 .container.show-signup .sign-up {
+  transform: translateX(0);
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(0);
 }
 footer {
-  position: absolute;
-  bottom: 1rem;
-  width: 100%;
   text-align: center;
+  padding: 1rem;
 }
 footer a {
   margin: 0 1rem;
-  color: var(--primary);
   text-decoration: none;
+  color: var(--primary);
   font-weight: bold;
 }
+footer a i {
+  margin-right: 5px;
+}
+
