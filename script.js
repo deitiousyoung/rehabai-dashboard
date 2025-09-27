@@ -1,8 +1,6 @@
 const container = document.getElementById('container');
 const goSignUp = document.getElementById('goSignUp');
 const goSignIn = document.getElementById('goSignIn');
-const menuBtn = document.getElementById('menuBtn');
-const dropdownMenu = document.getElementById('dropdownMenu');
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
 
@@ -12,11 +10,6 @@ goSignUp.addEventListener('click', () => {
 });
 goSignIn.addEventListener('click', () => {
   container.classList.remove('show-signup');
-});
-
-// Dropdown toggle for contacts
-menuBtn.addEventListener('click', () => {
-  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 });
 
 // Dark/Light theme toggle
