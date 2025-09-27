@@ -1,29 +1,27 @@
 const container = document.getElementById('container');
 const goSignUp = document.getElementById('goSignUp');
 const goSignIn = document.getElementById('goSignIn');
-const signUpForm = document.querySelector('.sign-up');
-const signInForm = document.querySelector('.sign-in');
+const menuBtn = document.getElementById('menuBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const themeToggle = document.getElementById('themeToggle');
 
 goSignUp.addEventListener('click', () => {
   container.classList.add('show-signup');
-  signUpForm.style.opacity = '1';
-  signUpForm.style.pointerEvents = 'auto';
-  signInForm.style.opacity = '0';
 });
 
 goSignIn.addEventListener('click', () => {
   container.classList.remove('show-signup');
-  signUpForm.style.opacity = '0';
-  signUpForm.style.pointerEvents = 'none';
-  signInForm.style.opacity = '1';
 });
 
-document.querySelector('.theme-toggle').addEventListener('click', () => {
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
-const menuBtn = document.querySelector('.menu');
-const dropdown = document.querySelector('.dropdown');
+// Dropdown menu toggle
 menuBtn.addEventListener('click', () => {
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  if (dropdownMenu.style.display === 'block') {
+    dropdownMenu.style.display = 'none';
+  } else {
+    dropdownMenu.style.display = 'block';
+  }
 });
