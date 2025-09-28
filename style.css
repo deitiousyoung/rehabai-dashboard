@@ -1,22 +1,21 @@
-/* General styles */
+:root {
+  --blue: #0077b6;
+  --green: #00b36b;
+  --bg: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  --text: #222;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0a0f12, #001a14);
+  --text: #f5f5f5;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
-
-:root {
-  --blue: #0077b6;
-  --green: #00b36b;
-  --bg: #f5f5f5;
-  --text: #222;
-}
-
-body.dark {
-  --bg: #121212;
-  --text: #f5f5f5;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 header {
@@ -45,35 +44,61 @@ header {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 /* Carousel */
 .carousel {
-  overflow: hidden;
-  max-height: 400px;
   position: relative;
+  overflow: hidden;
+  height: 400px;
 }
 
 .slides {
-  display: flex;
-  width: 600%;
-  animation: slide 20s infinite;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.slides img {
+.slide {
+  position: absolute;
   width: 100%;
-  flex-shrink: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 12px;
 }
 
-@keyframes slide {
-  0% { transform: translateX(0); }
-  16% { transform: translateX(-100%); }
-  32% { transform: translateX(-200%); }
-  48% { transform: translateX(-300%); }
-  64% { transform: translateX(-400%); }
-  80% { transform: translateX(-500%); }
-  100% { transform: translateX(0); }
+/* Indicators */
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.indicators button {
+  background: white;
+  border: none;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicators button.active {
+  background: var(--blue);
 }
 
 /* Description */
@@ -83,15 +108,16 @@ header {
 }
 
 .description h2 {
-  color: var(--blue);
+  color: var(--green);
   margin-bottom: 1rem;
 }
 
 .description p {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   line-height: 1.6;
   color: var(--text);
+  text-align: justify;
 }
 
 /* Footer */
