@@ -1,59 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DY Rehab</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="themeToggle" class="theme-toggle">
-    <i id="themeIcon" class="fas fa-moon"></i>
-  </button>
+  <!-- Dark/Light Theme Toggle -->
+  <header>
+    <h1 class="logo">DY <span>Rehab</span></h1>
+    <button id="themeToggle">🌙</button>
+  </header>
 
-  <div id="container" class="container">
-    <!-- Sign In -->
-    <div id="signInForm" class="form-container sign-in">
-      <div class="form">
-        <h2>Sign In</h2>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Sign In</button>
-        <div id="goSignUp" class="switch">Don’t have an account? Sign Up</div>
-      </div>
-    </div>
-
-    <!-- Sign Up -->
-    <div id="signUpForm" class="form-container sign-up">
-      <div class="form">
-        <h2>Sign Up</h2>
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button>Sign Up</button>
-        <div id="goSignIn" class="switch">Already have an account? Sign In</div>
-      </div>
-    </div>
-
-    <!-- Watermark Logo -->
-    <div class="watermark">DY<br><span>rehab</span></div>
-  </div>
-
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">Physical Therapy</div>
-      <div class="card">Occupational Therapy</div>
-      <div class="card">Hand Therapy</div>
-      <div class="card">Surgeries: Fractures, Joint Replacements, Sports Injuries</div>
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <div class="slides">
+      <img src="assets/hand.jpg" alt="Hand Therapy">
+      <img src="assets/occupational-therapy.jpg" alt="Occupational Therapy">
+      <img src="assets/physical-therapy.jpg" alt="Physical Therapy">
+      <img src="assets/hands-of-children.jpg" alt="Children's Therapy">
+      <img src="assets/massage.jpg" alt="Massage Therapy">
+      <img src="assets/drip.jpg" alt="Rehab Care">
     </div>
   </section>
 
+  <!-- Description Section -->
+  <section class="description">
+    <h2>Restoring Strength, Mobility & Hope</h2>
+    <p>
+      At <strong>DY Rehab</strong>, we specialize in comprehensive rehabilitation services 
+      to help you recover, rebuild, and thrive. Our dedicated team offers 
+      physical therapy, occupational therapy, hand therapy, and surgical aftercare 
+      including fracture management, joint replacements, and sports injury recovery.  
+      Your healing journey starts here.
+    </p>
+  </section>
+
+  <!-- Footer with social links -->
   <footer>
-    <a href="https://instagram.com/_deitious_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://wa.me/254769938130" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <p>Connect with us:</p>
+    <a href="https://instagram.com/_deitious_" target="_blank">Instagram</a> |
+    <a href="https://wa.me/254769938130" target="_blank">WhatsApp</a>
   </footer>
 
   <script src="script.js"></script>
